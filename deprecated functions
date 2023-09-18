@@ -1,0 +1,19 @@
+    const getClientsList = async() => {
+            try {
+                console.log('getting clients')
+                console.log(user)
+                let payload = {
+                    username: user.username,
+                    userType:'TRD',
+                    org:"org1"
+                }
+                const response = await getAllClients(payload);
+                console.log('response')
+                console.log(response)
+                setData(response)
+                dispatch(getClientsList(response));
+            } catch (error) {
+                console.log('error')
+                console.log(error)
+            };
+    }
